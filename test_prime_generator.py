@@ -9,3 +9,8 @@ class TestPrimeGenerator(TestCase):
         expect(pgen.check(2)).to(be_true)
         expect(pgen.check(5)).to(be_true)
         expect(pgen.check(12)).to(be_false)
+
+    def test_can_make_nth_prime(self):
+        pgen = PrimeGenerator()
+        expect(pgen.generate(2)).to(equal(3))
+        expect(pgen.generate(5)).to(equal(11))
