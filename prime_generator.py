@@ -13,9 +13,9 @@ class PrimeGenerator:
 
     def generate(self, num):
         primes = 0
-        start = 1
+        nth_prime = 1
         while primes != num:
-            start += 1
-            if self.check(start):
+            nth_prime += 1
+            if self.check(nth_prime):
                 primes += 1
-        return start
+        return nth_prime
