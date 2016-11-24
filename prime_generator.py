@@ -5,5 +5,8 @@ class PrimeGenerator:
         pass
     
     def check(self, num):
+        if num == 1:
+            return False
+
         sqrt_num_rounded_up = int(math.sqrt(num)+1)
         return not any([num % n == 0 for n in range(2,sqrt_num_rounded_up)])
