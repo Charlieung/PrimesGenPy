@@ -14,3 +14,16 @@ class TestPrimeGenerator(TestCase):
         pgen = PrimeGenerator()
         expect(pgen.generate(2)).to(equal(3))
         expect(pgen.generate(5)).to(equal(11))
+
+    def test_keeps_memory_of_primes(self):
+        pgen = PrimeGenerator()
+        expect(pgen.memory).to(equal([]))
+
+        pgen.generate(2)
+        expect(pgen.memory).to(equal([2,3]))
+
+        pgen.generate(5)
+        expect(pgen.memory).to(equal([2,3,5,7,11]))
+
+        pgen.generate(4)
+        expect(pgen.memory).to(equal([2,3,5,7,11]))
